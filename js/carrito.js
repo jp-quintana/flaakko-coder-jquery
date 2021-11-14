@@ -10,7 +10,13 @@ const renderListaCarrito = () => {
           <td class="carrito__producto">
             <img src="../img/productos-hoodie-blanco-1.jpg" alt="" class="carrito__imagen">
             <div class="carrito__info">
-              <p class="carrito__nombre">${producto.tipo} ${producto.modelo} ${producto.talle}</p>
+              <p class="carrito__nombre">${producto.tipo} ${producto.modelo}</p>
+              <div class="carrito__desplegado">
+                <p>Talle: ${producto.talle}</p>
+                <p>Color: ${producto.color}</p>
+              </div>
+              <div class="carrito__desplegar">desplegar info</p>
+
               <p data-id=${producto.sku} class="carrito__eliminar">remover</p>
             </div>
           </td>
@@ -41,5 +47,12 @@ $('#body-carrito').on('click', () => {
     removeCarrito($(event.target).data('id'));
     renderListaCarrito()
     renderPrecioTotalCarrito()
+  }
+})
+
+// Escuchar el evento desplegar
+$('#body-carrito').click(() => {
+  if ($(event.target).hasClass('carrito__desplegar')) {
+    $(event.target).prev('.carrito__desplegado').slideToggle()
   }
 })

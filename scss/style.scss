@@ -739,18 +739,27 @@ img {
         @at-root .carrito__imagen {
           height: 20rem;
         }
-        @at-root .carrito__nombre {
-          font-size: 1.6rem;
-        }
-        @at-root .carrito__eliminar {
-          font-size: 1rem;
-          color: gray;
-
-          &:hover {
+        @at-root .carrito__info {
+          @at-root .carrito__nombre {
+            font-size: 1.6rem;
+          }
+          @at-root .carrito__desplegado {
+            display: none;
+          }
+          @at-root .carrito__desplegar:hover {
             cursor: pointer;
+          }
+          @at-root .carrito__eliminar {
+            font-size: 1rem;
+            color: gray;
 
+            &:hover {
+              cursor: pointer;
+
+            }
           }
         }
+
       }
       @at-root .carrito__subtotal {
         flex-direction: row-reverse;

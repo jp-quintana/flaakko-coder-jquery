@@ -554,6 +554,10 @@ img {
           height: 20rem; }
         .carrito__nombre {
           font-size: 1.6rem; }
+        .carrito__desplegado {
+          display: none; }
+        .carrito__desplegar:hover {
+          cursor: pointer; }
         .carrito__eliminar {
           font-size: 1rem;
           color: gray; }
