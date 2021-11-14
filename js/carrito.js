@@ -15,7 +15,8 @@ const renderListaCarrito = () => {
                 <p>Talle: ${producto.talle}</p>
                 <p>Color: ${producto.color}</p>
               </div>
-              <div class="carrito__desplegar">desplegar info</p>
+              <p class="carrito__desplegar">desplegar info</p>
+              <p class="carrito__ocultar">ocultar info</p>
 
               <p data-id=${producto.sku} class="carrito__eliminar">remover</p>
             </div>
@@ -53,6 +54,27 @@ $('#body-carrito').on('click', () => {
 // Escuchar el evento desplegar
 $('#body-carrito').click(() => {
   if ($(event.target).hasClass('carrito__desplegar')) {
-    $(event.target).prev('.carrito__desplegado').slideToggle()
+    $(event.target).prev('.carrito__desplegado').slideDown()
+    $(event.target).next('.carrito__ocultar').show()
+    $(event.target).hide()
+  } else if ($(event.target).hasClass('carrito__ocultar')) {
+    $(event.target).prevAll('.carrito__desplegado').slideUp()
+    $(event.target).prev('.carrito__desplegar').show()
+    $(event.target).hide()
   }
 })
+
+// // Lo que no funciono
+// $('#body-carrito').click(() => {
+//   if ($(event.target).hasClass('carrito__desplegar')) {
+//     $(event.target).prev('.carrito__desplegado').slideDown(() => {
+//       $(this).next('.carrito__ocultar').show()
+//       $(this).hide()
+//     })
+//   } else if ($(event.target).hasClass('carrito__ocultar')) {
+//     $(event.target).prevAll('.carrito__desplegado').slideUp(() => {
+//       $(this).prev('.carrito__desplegar').show()
+//       $(this).hide()
+//     })
+//   }
+// })

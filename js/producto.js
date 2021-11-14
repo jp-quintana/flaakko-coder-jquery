@@ -1,20 +1,5 @@
 let sku = 1000
 
-// Mostar "Producto agregado con exito" en el browser
-const renderExitoCarrito = () => {
-
-    $('#exito-producto').append(
-      `
-      <p>Se ha agregado con exito el producto al carrito!</p>
-      `
-    )
-
-  // Desaparezca despues de 3 segundos
-  setTimeout(() => {
-    $('#exito-producto').empty();
-  }, 3000);
-}
-
 // Escuchar el evento submit
 $('#form-producto').on('submit', () => {
   sku = sku + 1
@@ -29,8 +14,11 @@ $('#form-producto').on('submit', () => {
   addCarrito(producto);
 })
 
-// Escuchar el evento submit Exito
+// Mostar "Producto agregado con exito" en el browser
 $('#form-producto').on('submit', () => {
   event.preventDefault();
-  renderExitoCarrito();
+  $('#exito-prodcuto').hide()
+  $('#exito-producto').fadeIn('slow', () => {
+    $('#exito-producto').fadeOut(3000)
+  })
 })

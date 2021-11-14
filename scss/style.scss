@@ -485,6 +485,9 @@ img {
         }
 
       }
+      @at-root .producto__exito {
+        display: none;
+      }
     }
   }
   &__img {
@@ -748,6 +751,9 @@ img {
           }
           @at-root .carrito__desplegar:hover {
             cursor: pointer;
+          }
+          @at-root .carrito__ocultar {
+            display: none;
           }
           @at-root .carrito__eliminar {
             font-size: 1rem;
