@@ -1,14 +1,11 @@
-const URL_JSON = "../productos.json"
+const URL_JSON = "../productos.json";
 
 $(document).ready(() => {
   $.getJSON(URL_JSON, (response, status) => {
 
-    if (status !== 'success') {
-      throw new ERROR('error')
-    }
 
-    for (const articulo of response) {
-      $('#productos').prepend(
+    for (let articulo of response) {
+      $('#productos').append(
         `
         <div class="productos__item">
             <a href="producto.html" class="productos__enlace">
@@ -25,5 +22,19 @@ $(document).ready(() => {
         `
       )
     }
+  }).fail(() => {
+    throw new Error('error')
   })
 })
+
+
+// $(document).ready(() => {
+//   $.ajax({
+//     method: "GET",
+//     datatype: 'json',
+//     url: "../productos.json",
+//     success: () => {
+//       console.log('hola');
+//     }
+//   })
+// })
