@@ -1,1 +1,22 @@
-  
+[
+  {
+    "sku": 1001,
+    "tipo": "remera",
+    "modelo": "De Gira",
+    "color": "blanca",
+    "talle": "",
+    "precio": 3600,
+    "img1": "img/productos-remera-blanca-1.jpg",
+    "img2": "img/productos-remera-blanca-2.jpg",
+  },
+  {
+    "sku": 1002,
+    "tipo": "remera",
+    "modelo": "Ojos",
+    "color": "negra",
+    "talle": "",
+    "precio": 3400,
+    "img1": "img/productos-remera-blanca-1.jpg",
+    "img2": "img/productos-remera-blanca-1.jpg",
+  }
+]
