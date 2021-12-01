@@ -122,6 +122,20 @@ img {
           border: none;
           background-color: transparent;
         }
+        &__icono-carrito {
+          position: relative;
+          @at-root .navegacion__items-carrito {
+            font-size: 1rem;
+            position: absolute;
+            top: -.8rem;
+            right: -.5rem;
+            padding: 0 .5rem;
+            color: $blanco;
+            text-align: center;
+            background-color: $violeta;
+          }
+        }
+
     }
     @at-root.navegacion2 {
       display: none;

@@ -57,3 +57,18 @@ const modifyCarrito = (sku, color) => {
     const producto = findCarrito(sku);
     producto.color = capitalizar(color);
 }
+
+const itemsCarrito = () => {
+  if (carrito.length === 0) {
+    $("#items-carrito").css("display", "none")
+  } else {
+    $("#items-carrito").text(
+      `
+      ${carrito.length}
+      `
+    )
+  }
+
+}
+
+itemsCarrito()
