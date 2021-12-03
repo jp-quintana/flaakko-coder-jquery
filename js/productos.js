@@ -23,7 +23,7 @@ class Display {
           $('#productos').append(
             `
             <div class="productos__item">
-                <a href="producto.html" class="productos__enlace">
+                <a href="#" class="productos__enlace">
                   <div class="productos__imagen-contenedor">
                     <img src=${producto.img1} alt="" class="productos__imagen">
                     <img src=${producto.img2} alt="" class="productos__imagen-bottom">
@@ -33,23 +33,132 @@ class Display {
                     <li class="productos__precio">$${producto.precio}</li>
                   </ul>
                 </a>
+                <form id="form-producto" class="" action="" >
+                  <select id="talle-producto" class="producto__talle" name="" required>
+                    <option value="" disabled selected>Elegi tu talle</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <button class="producto__boton producto-boton" type="submit" name="button" data-id=${producto.sku}>Agregar a carrito</button>
+                </form>
             </div>
             `
           )
         }
   }
+
+  getBotonesCarrito() {
+    let botones = [...$(".producto-boton")]
+    let id = botones.map(boton => {
+      return boton.dataset.id
+    })
+
+  }
 }
 
-
+class Storage {
+  static saveProductos(productos){
+    localStorage.setItem("productos", JSON.stringify(productos))
+  }
+}
 
 $(document).ready(() => {
 
   const productos = new Productos();
   const display = new Display();
 
-  productos.getProductos("../productos.json").then(productos => display.displayProductos(productos))
-  
+  productos.getProductos("../productos.json").then(productos => {
+    display.displayProductos(productos)
+    Storage.saveProductos(productos)
+  }).then(() => {
+    display.getBotonesCarrito()
+  })
+
 })
+
+// $('#form-producto').on('submit', () => {
+//   if (carrito.) {
+//
+//   } else {
+//     sku = sku + 1
+//     const tipo = "Buzo"
+//     const modelo = "De Gira"
+//     const color = "Blanco"
+//     const talle = $('#talle-producto').val()
+//     const precio = 6400
+//
+//     const producto = new ProductoCarrito(sku, tipo, modelo, color, talle, precio);
+//
+//     addCarrito(producto);
+//   }
+// })
+
+// const checkCarrito = (sku, talle) => {
+//   let idCarrito = carrito.map(producto => {
+//     return producto['sku']
+//   })
+//   let talleCarrito = carrito.map(producto => {
+//     return producto['talle']
+//   })
+//   if (idCarrito.indexOf(sku) > 0 && talleCarrito.indexOf(talle) > 0) {
+//     agregarUnidadCarrito(findCarrito(sku));
+//   } else {
+//     const sku = sku
+//     const tipo = "Buzo"
+//     const modelo = "De Gira"
+//     const color = "Blanco"
+//     const talle = $('#talle-producto').val()
+//     const precio = 6400
+//
+//     const producto = new ProductoCarrito(sku, tipo, modelo, color, talle, precio);
+//
+//     addCarrito(producto);
+//   }
+//   return
+// }
+//
+// console.log(checkCarrito())
+
+const checkCarrito = (sku, talle) => {
+  let idEnCarrito = carrito.find(producto => product.sku === sku)
+  let talleEnCarrito = carrito.find(producto => producto.talle === talle)
+
+  if (idEnCarrito && talleEnCarrito) {
+    agregarUnidadCarrito(findCarrito(sku));
+  } else {
+    const sku = sku
+    const tipo = "Buzo"
+    const modelo = "De Gira"
+    const color = "Blanco"
+    const talle = $('#talle-producto').val()
+    const precio = 6400
+
+    const producto = new ProductoCarrito(sku, tipo, modelo, color, talle, precio);
+
+    addCarrito(producto);
+  }
+  return
+}
+
+console.log(checkCarrito())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // $(document).ready(() => {
