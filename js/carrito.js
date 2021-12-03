@@ -47,7 +47,8 @@ renderPrecioTotalCarrito()
 // Escuchar el evento click en remover
 $('#body-carrito').on('click', () => {
   if ($(event.target).hasClass('carrito__eliminar')) {
-    removeCarrito($(event.target).data('id'));
+    let skuString = $(event.target).data('id').toString()
+    removeCarrito(skuString);
     renderListaCarrito()
     renderPrecioTotalCarrito()
   }
@@ -65,18 +66,3 @@ $('#body-carrito').click(() => {
     $(event.target).hide()
   }
 })
-
-// // Lo que no funciono
-// $('#body-carrito').click(() => {
-//   if ($(event.target).hasClass('carrito__desplegar')) {
-//     $(event.target).prev('.carrito__desplegado').slideDown(() => {
-//       $(this).next('.carrito__ocultar').show()
-//       $(this).hide()
-//     })
-//   } else if ($(event.target).hasClass('carrito__ocultar')) {
-//     $(event.target).prevAll('.carrito__desplegado').slideUp(() => {
-//       $(this).prev('.carrito__desplegar').show()
-//       $(this).hide()
-//     })
-//   }
-// })

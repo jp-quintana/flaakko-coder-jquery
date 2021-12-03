@@ -1,7 +1,3 @@
-const URL_JSON = ""
-let botonesDOM = []
-console.log(carrito)
-
 class Productos {
   async getProductos(url) {
     const result = await $.ajax({
