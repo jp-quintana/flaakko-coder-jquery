@@ -3,16 +3,18 @@ const renderListaCarrito = () => {
 
   $('#body-carrito').empty();
 
+  let precioIndividual = 0
   for (let producto of carrito) {
+    precioIndividual = producto.precio * producto.unidades
+
       $('#body-carrito').append(
         `
         <tr class="carrito__fila">
           <td class="carrito__producto">
-            <img src="../img/productos-hoodie-blanco-1.jpg" alt="" class="carrito__imagen">
+            <img src=${producto.img1} alt="" class="carrito__imagen">
             <div class="carrito__info">
               <p class="carrito__nombre">${producto.tipo} ${producto.modelo}</p>
               <div class="carrito__desplegado">
-                <p>Talle: ${producto.talle}</p>
                 <p>Color: ${producto.color}</p>
               </div>
               <p class="carrito__desplegar">desplegar info</p>
@@ -21,8 +23,8 @@ const renderListaCarrito = () => {
               <p data-id=${producto.sku} class="carrito__eliminar">remover</p>
             </div>
           </td>
-          <td class="carrito__cantidad">1u</td>
-          <td class="carrito__subtotal">$ ${producto.precio}</td>
+          <td class="carrito__cantidad">${producto.unidades}u</td>
+          <td class="carrito__subtotal">$ ${precioIndividual}</td>
         </tr>
         `
       )
@@ -35,7 +37,7 @@ renderListaCarrito()
 const renderPrecioTotalCarrito = () => {
   let total = 0;
   for (let producto of carrito) {
-      total += producto.precio
+      total += producto.precio * producto.unidades
   }
   $('#precio-total-carrito').text(`Total: $${total}`);
 }

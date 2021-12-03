@@ -30,6 +30,13 @@ const addCarrito = producto => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
+const addUnidad = sku => {
+  const producto = findCarrito(sku);
+  const indice = carrito.indexOf(producto);
+  carrito[indice].unidades += 1;
+  localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
 // Metodo para hallar un producto por su SKU
 const findCarrito = sku => {
 
@@ -63,9 +70,13 @@ const itemsCarrito = () => {
   if (carrito.length === 0) {
     $("#items-carrito").css("display", "none")
   } else {
+    let total = 0
+    for (let producto of carrito) {
+      total += producto.unidades
+    }
     $("#items-carrito").text(
       `
-      ${carrito.length}
+      ${total}
       `
     )
   }
