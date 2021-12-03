@@ -1,4 +1,4 @@
-class Producto {
+class ProductoCarrito {
   constructor(sku, tipo, modelo, color, talle, precio) {
     this.sku = sku
     this.tipo = capitalizar(tipo)

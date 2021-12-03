@@ -17,12 +17,38 @@ class Productos {
   }
 }
 
+class Display {
+  displayProductos(productos) {
+    for (let producto of productos) {
+          $('#productos').append(
+            `
+            <div class="productos__item">
+                <a href="producto.html" class="productos__enlace">
+                  <div class="productos__imagen-contenedor">
+                    <img src=${producto.img1} alt="" class="productos__imagen">
+                    <img src=${producto.img2} alt="" class="productos__imagen-bottom">
+                  </div>
+                  <ul class="productos__info">
+                    <li class="productos__nombre">${producto.tipo} <span>${producto.modelo}</span> ${producto.color}</li>
+                    <li class="productos__precio">$${producto.precio}</li>
+                  </ul>
+                </a>
+            </div>
+            `
+          )
+        }
+  }
+}
 
 
-const productos = new Productos();
 
 $(document).ready(() => {
-  productos.getProductos("../productos.json").then(data => console.log(data))
+
+  const productos = new Productos();
+  const display = new Display();
+
+  productos.getProductos("../productos.json").then(productos => display.displayProductos(productos))
+  
 })
 
 

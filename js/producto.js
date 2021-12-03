@@ -9,7 +9,7 @@ $('#form-producto').on('submit', () => {
   const talle = $('#talle-producto').val()
   const precio = 6400
 
-  const producto = new Producto(sku, tipo, modelo, color, talle, precio);
+  const producto = new ProductoCarrito(sku, tipo, modelo, color, talle, precio);
 
   addCarrito(producto);
 })
