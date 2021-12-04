@@ -62,6 +62,7 @@ $('#body-carrito').on('click', () => {
     renderListaCarrito()
     renderPrecioTotalCarrito()
     itemsCarrito()
+    confirmarCarrito()
   }
 })
 
@@ -97,6 +98,7 @@ $('#body-carrito').on('click', () => {
     renderListaCarrito()
     renderPrecioTotalCarrito()
     itemsCarrito()
+    confirmarCarrito()
   }
 })
 
