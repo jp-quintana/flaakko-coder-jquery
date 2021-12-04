@@ -99,3 +99,23 @@ $('#body-carrito').on('click', () => {
     itemsCarrito()
   }
 })
+
+const confirmarCarrito = () => {
+  if (carrito.length === 0) {
+    $("#boton-carrito").css("visibility", "hidden")
+  } else {
+    $("#boton-carrito").css("visibility", "visible")
+
+    $("#boton-carrito").click(() => {
+      vaciarCarrito()
+      renderListaCarrito()
+      renderPrecioTotalCarrito()
+      itemsCarrito()
+      alert("Has realizado tu compra con éxito")
+      confirmarCarrito()
+    })
+
+  }
+}
+
+confirmarCarrito()

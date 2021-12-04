@@ -602,8 +602,7 @@ img {
       padding: 1rem;
       font-size: 1.6rem;
       font-weight: 800;
-      border: none;
-      display: none; }
+      border: none; }
       .carrito__boton:hover {
         background-color: rgba(0, 0, 0, 0.8); }
 

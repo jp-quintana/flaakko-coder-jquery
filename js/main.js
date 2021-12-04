@@ -61,6 +61,11 @@ const modifyCarrito = (sku, color) => {
     producto.color = capitalizar(color);
 }
 
+const vaciarCarrito = () => {
+  carrito.length = 0;
+  localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
 const itemsCarrito = () => {
   if (carrito.length === 0) {
     $("#items-carrito").css("visibility", "hidden")
@@ -77,7 +82,6 @@ const itemsCarrito = () => {
       `
     )
   }
-
 }
 
 itemsCarrito()
