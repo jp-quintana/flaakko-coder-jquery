@@ -1,4 +1,4 @@
-// Agregar productos al carrito en el browser
+// Renderiza el carrito
 const renderListaCarrito = () => {
 
   $('#body-carrito').empty();
@@ -43,7 +43,7 @@ const renderListaCarrito = () => {
 
 renderListaCarrito()
 
-// Sumar el total de los productos en el browser
+// Suma el total $$$ de los productos en el browser
 const renderPrecioTotalCarrito = () => {
   let total = 0;
   for (let producto of carrito) {
@@ -54,7 +54,7 @@ const renderPrecioTotalCarrito = () => {
 
 renderPrecioTotalCarrito()
 
-// Escuchar el evento click en remover
+// Escucha el evento click en remover. Remueve el producto elegido del carrito
 $('#body-carrito').on('click', () => {
   if ($(event.target).hasClass('carrito__eliminar')) {
     let skuString = $(event.target).data('id').toString()
@@ -65,7 +65,7 @@ $('#body-carrito').on('click', () => {
   }
 })
 
-// Escuchar el evento desplegar
+// Escucha el evento desplegar. Despliega info del producto elegido
 $('#body-carrito').click(() => {
   if ($(event.target).hasClass('carrito__desplegar')) {
     $(event.target).prev('.carrito__desplegado').slideDown()
@@ -78,7 +78,7 @@ $('#body-carrito').click(() => {
   }
 })
 
-// Escuchar el evento click en agregar
+// Escucha el evento click en agregar. Agrega una unidad del producto elegido
 $('#body-carrito').on('click', () => {
   if ($(event.target).hasClass('carrito__agregar')) {
     let skuString = $(event.target).data('id').toString()
@@ -89,7 +89,7 @@ $('#body-carrito').on('click', () => {
   }
 })
 
-// Escuchar el evento click en reducir
+// Escucha el evento click en reducir. Reduce una unidad del producto elegido
 $('#body-carrito').on('click', () => {
   if ($(event.target).hasClass('carrito__reducir')) {
     let skuString = $(event.target).data('id').toString()
@@ -100,6 +100,7 @@ $('#body-carrito').on('click', () => {
   }
 })
 
+// Escucha el evento click en confirmar. Vacía carrito y tira alert de éxito
 const confirmarCarrito = () => {
   if (carrito.length === 0) {
     $("#boton-carrito").css("visibility", "hidden")

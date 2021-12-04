@@ -5,8 +5,10 @@ class Productos {
         datatype: 'json',
         url: url,
         success: (response) => {
+
           let productos = response;
           return productos;
+
         }
     }).fail(() => {
       throw new Error('error')
@@ -16,6 +18,7 @@ class Productos {
 }
 
 class Display {
+  // Renderiza productos
   displayProductos(productos) {
     for (let producto of productos) {
       $('#productos').append(
@@ -38,20 +41,20 @@ class Display {
     }
   }
 
-  // Method para poder darle uso a cada boton y funciones
+  // Obtiene id de botones y otorga funciones
   getBotonesCarrito() {
 
-    // Storear todos los botones en un array
+    // Storea todos los botones en un array
     let botones = [...$(".producto-boton")]
 
     botones.forEach(boton => {
 
-      // Conseguir el data-id de cada boton
+      // Consigue el data-id de cada boton
       let sku = boton.dataset.id;
 
       boton.addEventListener('click', event => {
 
-        // Traer del local el producto segun su sku
+        // Trae del local el producto segun su SKU
         let productoCarrito = {...Storage.getProducto(sku)}
 
         // Variable para testear
@@ -72,6 +75,7 @@ class Display {
 }
 
 class Storage {
+  // No requieren instances con el static
   static saveProductos(productos) {
     localStorage.setItem("productos", JSON.stringify(productos))
   }
@@ -82,15 +86,24 @@ class Storage {
 }
 
 $(document).ready(() => {
-
+  // Instances
   const productos = new Productos();
   const display = new Display();
 
+  // Trae los productos del json
   productos.getProductos("../productos.json").then(productos => {
+
+    // Una vez que se obtiene renderiza los productos
     display.displayProductos(productos)
+
+    // Una vez que se obtiene se guardan en el local storage
     Storage.saveProductos(productos)
+
   }).then(() => {
+
+    // Por útlimo se busca el id de los botones y se asignan tareas
     display.getBotonesCarrito()
+
     itemsCarrito()
   })
 
