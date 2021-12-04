@@ -1,21 +1,3 @@
-class ProductoCarrito {
-  constructor(sku, tipo, modelo, color, talle, precio, unidad) {
-    this.sku = sku
-    this.tipo = capitalizar(tipo)
-    this.modelo = capitalizar(modelo)
-    this.color = capitalizar(color)
-    this.talle = talle.toUpperCase()
-    this.precio = parseInt(precio)
-    this.unidad = parseInt(unidad)
-  }
-}
-
-
-// Funcion para capitalizar la primer letra de un string
-function capitalizar(palabra) {
-  return palabra[0].toUpperCase() + palabra.slice(1);
-}
-
 // Array carrito
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 

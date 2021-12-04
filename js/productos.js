@@ -79,9 +79,6 @@ class Storage {
     let productos = JSON.parse(localStorage.getItem("productos"))
     return productos.find(producto => producto.sku === sku)
   }
-  static saveCarrito(carrito) {
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-  }
 }
 
 $(document).ready(() => {
