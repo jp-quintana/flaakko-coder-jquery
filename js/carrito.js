@@ -61,6 +61,7 @@ $('#body-carrito').on('click', () => {
     removeCarrito(skuString);
     renderListaCarrito()
     renderPrecioTotalCarrito()
+    itemsCarrito()
   }
 })
 
@@ -84,6 +85,7 @@ $('#body-carrito').on('click', () => {
     addUnidad(skuString);
     renderListaCarrito()
     renderPrecioTotalCarrito()
+    itemsCarrito()
   }
 })
 
@@ -94,5 +96,6 @@ $('#body-carrito').on('click', () => {
     reducirUnidad(skuString);
     renderListaCarrito()
     renderPrecioTotalCarrito()
+    itemsCarrito()
   }
 })
