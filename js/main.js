@@ -81,8 +81,10 @@ const modifyCarrito = (sku, color) => {
 
 const itemsCarrito = () => {
   if (carrito.length === 0) {
-    $("#items-carrito").css("display", "none")
+    $("#items-carrito").css("visibility", "hidden")
   } else {
+    $("#items-carrito").css("visibility", "visible")
+
     let total = 0
     for (let producto of carrito) {
       total += producto.unidades

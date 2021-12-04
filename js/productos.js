@@ -94,6 +94,8 @@ $(document).ready(() => {
     Storage.saveProductos(productos)
   }).then(() => {
     display.getBotonesCarrito()
+    itemsCarrito()
   })
+
 
 })
