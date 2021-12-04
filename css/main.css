@@ -591,6 +591,21 @@ img {
         flex-direction: row-reverse; }
   .carrito__total {
     align-self: flex-end; }
+  .carrito__boton-container {
+    display: flex;
+    justify-content: center; }
+    .carrito__boton {
+      display: flex;
+      color: #ffffff;
+      background-color: #000000;
+      height: 4rem;
+      padding: 1rem;
+      font-size: 1.6rem;
+      font-weight: 800;
+      border: none;
+      display: none; }
+      .carrito__boton:hover {
+        background-color: rgba(0, 0, 0, 0.8); }
 
 .error {
   min-height: 100vh;
