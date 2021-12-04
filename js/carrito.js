@@ -25,23 +25,13 @@ const renderListaCarrito = () => {
           </td>
           <td class="carrito__cantidad">
             <div class="carrito__cantidad-elementos">
-              <i data-id=${producto.sku} class="carrito__agregar">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-up" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="16" y1="9" x2="12" y2="5" />
-                  <line x1="8" y1="9" x2="12" y2="5" />
-                </svg>
-              </i>
+              <p data-id=${producto.sku} class="carrito__agregar">
+                ^
+              </p>
               <p>${producto.unidades} u</p>
-              <i data-id=${producto.sku} class="carrito__reducir">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-down" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="16" y1="15" x2="12" y2="19" />
-                  <line x1="8" y1="15" x2="12" y2="19" />
-                </svg>
-              </i>
+              <p data-id=${producto.sku} class="carrito__reducir">
+                ^
+              </p>
             </div>
           </td>
           <td class="carrito__subtotal">$ ${precioIndividual}</td>
@@ -84,5 +74,25 @@ $('#body-carrito').click(() => {
     $(event.target).prevAll('.carrito__desplegado').slideUp()
     $(event.target).prev('.carrito__desplegar').show()
     $(event.target).hide()
+  }
+})
+
+// Escuchar el evento click en agregar
+$('#body-carrito').on('click', () => {
+  if ($(event.target).hasClass('carrito__agregar')) {
+    let skuString = $(event.target).data('id').toString()
+    addUnidad(skuString);
+    renderListaCarrito()
+    renderPrecioTotalCarrito()
+  }
+})
+
+// Escuchar el evento click en reducir
+$('#body-carrito').on('click', () => {
+  if ($(event.target).hasClass('carrito__reducir')) {
+    let skuString = $(event.target).data('id').toString()
+    reducirUnidad(skuString);
+    renderListaCarrito()
+    renderPrecioTotalCarrito()
   }
 })

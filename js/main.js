@@ -37,6 +37,19 @@ const addUnidad = sku => {
   localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
+const reducirUnidad = sku => {
+  const producto = findCarrito(sku);
+  const indice = carrito.indexOf(producto);
+
+  if (carrito[indice].unidades === 1) {
+    removeCarrito(sku)
+  } else {
+    carrito[indice].unidades -= 1;
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+  }
+
+}
+
 // Metodo para hallar un producto por su SKU
 const findCarrito = sku => {
 

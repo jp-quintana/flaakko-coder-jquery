@@ -582,6 +582,8 @@ img {
         display: flex;
         flex-direction: column;
         align-items: center; }
+        .carrito__reducir {
+          transform: rotate(180deg); }
         .carrito__agregar:hover,
         .carrito__reducir:hover {
           cursor: pointer; }
