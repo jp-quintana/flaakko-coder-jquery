@@ -330,11 +330,11 @@ img {
 
 .producto {
   display: grid;
-  grid-template-areas: "aside" "aside" "aside" "aside";
+  grid-template-areas: "aside" "aside" "aside" "aside";
   margin-bottom: 3rem; }
   @media (min-width: 768px) {
     .producto {
-      grid-template-areas: "main aside" "main aside" "main aside" "main aside";
+      grid-template-areas: "main aside" "main aside" "main aside" "main aside";
       grid-template-columns: 1fr 2fr;
       column-gap: 3rem; } }
   .producto__sticky {
@@ -396,7 +396,7 @@ img {
       background-color: white;
       padding: 2rem 5rem;
       display: grid;
-      grid-template-areas: "nombre precio" "talle boton";
+      grid-template-areas: "nombre precio" "talle boton";
       gap: 2rem; }
       .producto__nombre-responsive {
         grid-area: nombre; }
@@ -448,12 +448,12 @@ img {
 
 .soporte {
   display: grid;
-  grid-template-areas: "header" "aside" "main";
+  grid-template-areas: "header" "aside" "main";
   gap: 3rem;
   margin-bottom: 2rem; }
   @media (min-width: 768px) {
     .soporte {
-      grid-template-areas: "header header header" "aside main main" ". main main"; } }
+      grid-template-areas: "header header header" "aside main main" ". main main"; } }
   .soporte__titulo {
     grid-area: header;
     text-align: center;
@@ -508,13 +508,13 @@ img {
 
 .sobre-nosotros {
   display: grid;
-  grid-template-areas: "main" "img1" "aside" "img2";
+  grid-template-areas: "main" "img1" "aside" "img2";
   margin-bottom: 3rem;
   gap: 2rem; }
   @media (min-width: 768px) {
     .sobre-nosotros {
       display: grid;
-      grid-template-areas: "main img1" "img2 aside";
+      grid-template-areas: "main img1" "img2 aside";
       gap: 0;
       column-gap: 6rem; } }
   .sobre-nosotros__main {
@@ -578,6 +578,13 @@ img {
           color: gray; }
           .carrito__eliminar:hover {
             cursor: pointer; }
+      .carrito__cantidad-elementos {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .carrito__agregar:hover,
+        .carrito__reducir:hover {
+          cursor: pointer; }
       .carrito__subtotal {
         flex-direction: row-reverse; }
   .carrito__total {

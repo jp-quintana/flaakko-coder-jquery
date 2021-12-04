@@ -781,6 +781,24 @@ img {
         }
 
       }
+      @at-root .carrito__cantidad {
+
+        @at-root .carrito__cantidad-elementos {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          @at-root .carrito__agregar,
+          .carrito__reducir {
+
+
+            &:hover {
+              cursor: pointer;
+            }
+
+          }
+        }
+      }
       @at-root .carrito__subtotal {
         flex-direction: row-reverse;
       }
