@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAAKKO | Producto</title>
+    <meta name="description" content="Nombre Producto. Ropa unisex con estilo. Envíos a todos el país.">
+    <meta name="keywords" content="ropa, producto, remeras, accesorios, buzos, unisex, streetwear">
+    <link rel="preload" href="../css/normalize.css" as="style">
+    <link rel="preload" href="../css/main.css" as="style">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.cdnfonts.com/css/monument-extended" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header-pages">
+      <div class="header-grid">
+        <div class="logo">
+          <a class="logo__link" href="../index.html">
+            <img class="logo__nombre" src="../img/logo1 b.png" alt="logo flaakko">
+          </a>
+        </div>
+        <nav class="navegacion">
+          <a class="navegacion__enlace" href="404.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <circle cx="10" cy="10" r="7" />
+              <line x1="21" y1="21" x2="15" y2="15" />
+            </svg>
+          </a>
+          <div class="navegacion__enlace">
+            <!-- Button trigger modal -->
+            <button type="button" class="navegacion__sign-in-modal" data-toggle="modal" data-target="#sign-in-modal">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <circle cx="12" cy="7" r="4" />
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+            </button>
+          </div>
+          <a class="navegacion__enlace" href="carrito.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <circle cx="6" cy="19" r="2" />
+              <circle cx="17" cy="19" r="2" />
+              <path d="M17 17h-11v-14h-2" />
+              <path d="M6 5l14 1l-1 7h-13" />
+            </svg>
+          </a>
+        </nav>
+        <nav class="navegacion2">
+            <a class="navegacion2__enlace" href="remeras.html">Remeras</a>
+            <a class="navegacion2__enlace" href="buzos.html">Buzos</a>
+            <a class="navegacion2__enlace" href="accesorios.html">Accesorios</a>
+        </nav>
+      </div> <!-- .header-grid -->
+    </header>
+
+    <main class="main">
+      <div class="contenedor">
+        <section class="producto">
+          <div class="producto__sticky">
+            <div class="producto__info">
+              <h1 class="producto__nombre no-margin">De Gira</h1>
+              <p class="producto__detalle no-margin">Hoodie Blanco</p>
+              <p class="producto__precio no-margin">$6.400</p>
+              <div class="producto__color">
+                <img class="producto__miniatura" src="../img/producto-blanco-1-miniatura.jpg" alt="">
+                <img class="producto__miniatura" src="../img/producto-negro-1-miniatura.jpg" alt="">
+              </div>
+              <form id="form-producto" class="" action="" >
+                <select id="talle-producto" class="producto__talle" name="" required>
+                  <option value="" disabled selected>Elegi tu talle</option>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <button class="producto__boton" type="submit" name="button">Agregar a carrito</button>
+                <br></br>
+                <div id="exito-producto" class="producto__exito">
+                  <p>Se ha agregado con exito el producto al carrito!</p>
+                </div>
+              </form>
+
+            </div> <!-- .producto__info -->
+          </div> <!-- .producto__sticky -->
+
+          <div class="producto__sticky-responsive">
+            <div class="producto__info-responsive">
+              <p class="producto__nombre-responsive no-margin">Hoodie <span>De Gira</span> blanco</p>
+              <p class="producto__precio-responsive no-margin">$6.400</p>
+              <select class="producto__talle-responsive" name="">
+                <option value="xs" disabled selected>Elegi tu talle</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+              </select>
+              <button class="producto__boton-responsive" type="submit" name="button">Agregar a carrito</button>
+            </div> <!-- .producto__info-responsive -->
+          </div> <!-- .producto__sticky-responsive -->
+
+          <div class="producto__img">
+            <img src="../img/productos-hoodie-blanco-1.jpg" alt="">
+            <img src="../img/productos-hoodie-blanco-2.jpg" alt="">
+          </div>
+        </section>
+      </div> <!-- .contenedor -->
+    </main>
+
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="footer-grid">
+          <section class="paginas">
+            <div class="paginas__item">
+              <p class="paginas__titulo-seccion no-margin">Ayuda</p>
+              <a class="paginas__enlace" href="contacto.html">Contacto</a>
+              <a class="paginas__enlace" href="pagos-envios.html">Pagos & envios</a>
+              <a class="paginas__enlace" href="ordenes.html">Ordenes</a>
+              <a class="paginas__enlace" href="retornos.html">Retornos</a>
+            </div>
+            <div class="paginas__item">
+              <p class="paginas__titulo-seccion no-margin">Info</p>
+              <a class="paginas__enlace" href="sobre-nosotros.html">Sobre nosotros</a>
+            </div>
+          </section>
+          <section class="redes">
+            <a class="redes__enlace" href="https://www.instagram.com/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="4" y="4" width="16" height="16" rx="4" />
+                <circle cx="12" cy="12" r="3" />
+                <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+              </svg>
+            </a>
+            <a class="redes__enlace" href="https://twitter.com/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+              </svg>
+            </a>
+            <a class="redes__enlace" href="https://www.spotify.com/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-spotify" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8 11.973c2.5 -1.473 5.5 -.973 7.5 .527" />
+                <path d="M9 15c1.5 -1 4 -1 5 .5" />
+                <path d="M7 9c2 -1 6 -2 10 .5" />
+              </svg>
+            </a>
+          </section>
+        </div> <!-- .footer-grid -->
+      </div> <!-- .contenedor -->
+    </footer>
+
+    <!-- Modal Sign-In -->
+    <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sign-in-exampleModalLongTitle">Iniciar sesion</h5>
+            <button type="button" class="close navegacion__sign-in-modal-close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="navegacion__sign-in-modal-form" action="" method="">
+              <label class="block" for="email-sign-in">Tu email*</label>
+              <input class="modal--input block" type="email" name="email-sign-in" id="email-sign-in" value="" placeholder="tuemail@mail.com" required>
+              <br>
+
+                <label class="block" for="password-sign-in">Tu contraseña*</label>
+              <input class="modal--input block" type="password" name="password-sign-in" id="password-sign-in" value="" required>
+              <br>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary modal--boton-secundario" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary modal--boton-primario">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/producto.js"></script>
+
+  </body>
+</html>
